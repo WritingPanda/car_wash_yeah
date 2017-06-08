@@ -17,15 +17,13 @@ Please write your code with a mind to its instructional use.
 What I'm using:
 
 * [Python 3.6.1](https://www.python.org/downloads/release/python-361/)
-* [Flask 0.12.2](http://flask.pocoo.org/)
-* [Flask-SQLAlchemy 2.2](http://flask-sqlalchemy.pocoo.org/2.1/)
-* [Flask-Admin 1.5.0](https://flask-admin.readthedocs.io/en/latest/introduction/)
-* [Flask-Login 0.3.2](https://flask-login.readthedocs.io/en/latest/)
-* [Flask-Security 1.7.5](https://pythonhosted.org/Flask-Security/)
+* [Django 1.11.2](https://www.djangoproject.com/)
 
 ## Methodology
 
 For this project, I am going to keep it simple and create a minimally viable product. The goal is to meet the requirements in order to make instruction of building the application as easy to understand as possible. The additions of the other elements in Flask offer opportunities for further expansion of the project, if time, but the main goal is to meet the requirements in as simple of a way as possible.
+
+**EDIT**: I am refactoring my code for Django. I got tired of working with all of the different packages in Flask. There was too much that I needed and very little time to get it all together in a short lesson to show someone how to use the web framework to build a simple application. For now, I am going to make it easier on myself and show someone how to use Django instead. It has everything I need and then some.
 
 ## Learning Objectives
 
@@ -33,18 +31,16 @@ Since we are working with a microframework, it makes it simpler to breakdown the
 
 When finished reading the source code or watching the subsequent video (TBD), developers will:
 
-1. Be able to install Flask
+1. Be able to install Django
 2. Write a basic application
 3. Understand the fundamentals of Python for web development
 4. Utilize a development server
-5. Write, read, update, and delete data from a database using Flask-SQLAlchemy
+5. Write, read, update, and delete data from a database using Django ORM
 6. Create models to represent their data
-7. Understand the use cases for Flask extensions
-8. Work from an admin view using Flask-Admin
-9. Write a simple user interface using HTML and CSS
-10. Use a CSS framework like Bootstrap for styling and organizing the presentation layer
-11. Inject data into templates using Jinja2
-12. Work with HTML forms and Flask
+7. Write a simple user interface using HTML and CSS
+8. Use a CSS framework like Bootstrap for styling and organizing the presentation layer
+9. Inject data into templates using Django templates
+10. Work with HTML forms and Django
 
 ## Documentation
 

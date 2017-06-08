@@ -1,0 +1,26 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% include 'car_wash_manager/includes/stylesheets.html' %}
+    {% block stylesheets %}
+    {% endblock %}
+    <title>{% block title %}Car Was App{% endblock %}</title>
+</head>
+<body>
+    {% include 'car_wash_manager/includes/nav.html' %}
+
+    <div class="container">
+        {% include 'car_wash_manager/includes/messages.html' %}
+        {# Content #}
+        {% block content %}
+        {% endblock %}
+        {# End Content #}
+    </div>
+
+    {% include 'car_wash_manager/includes/scripts.html' %}
+    {% block scripts %}
+    {% endblock %}
+</body>
+</html>
