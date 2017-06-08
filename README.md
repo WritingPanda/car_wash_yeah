@@ -4,24 +4,24 @@
 
 Please build an application for a car wash business. This is an open ended request, so there are many ways you could do this. However, make sure your application can handle the following:
     
-    - Your car wash accepts cars and trucks.
-    - You charge $5 for cars.
-    - Your charge $10 for trucks.
-    - Your car wash charges $2 extra if the truck has mud in the bed.
-    - Your car wash does not accept trucks with the bed let down.
-    - If the vehicle comes in a second time, they get 50% off.
-    - If the license plate equals 1111111, the vehicle is stolen and does not get a car wash.
+- Your car wash accepts cars and trucks.
+- You charge $5 for cars.
+- Your charge $10 for trucks.
+- Your car wash charges $2 extra if the truck has mud in the bed.
+- Your car wash does not accept trucks with the bed let down.
+- If the vehicle comes in a second time, they get 50% off.
+- If the license plate equals 1111111, the vehicle is stolen and does not get a car wash.
  
 Please write your code with a mind to its instructional use.
 
 What I'm using:
 
-    * [Python 3.6.1](https://www.python.org/downloads/release/python-361/)
-    * [Flask 0.12.2](http://flask.pocoo.org/)
-    * [Flask-SQLAlchemy 2.2](http://flask-sqlalchemy.pocoo.org/2.1/)
-    * [Flask-Admin 1.5.0](https://flask-admin.readthedocs.io/en/latest/introduction/)
-    * [Flask-Login 0.3.2](https://flask-login.readthedocs.io/en/latest/)
-    * [Flask-Security 1.7.5](https://pythonhosted.org/Flask-Security/)
+* [Python 3.6.1](https://www.python.org/downloads/release/python-361/)
+* [Flask 0.12.2](http://flask.pocoo.org/)
+* [Flask-SQLAlchemy 2.2](http://flask-sqlalchemy.pocoo.org/2.1/)
+* [Flask-Admin 1.5.0](https://flask-admin.readthedocs.io/en/latest/introduction/)
+* [Flask-Login 0.3.2](https://flask-login.readthedocs.io/en/latest/)
+* [Flask-Security 1.7.5](https://pythonhosted.org/Flask-Security/)
 
 ## Methodology
 

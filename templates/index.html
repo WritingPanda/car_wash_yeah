@@ -1,23 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <!-- playing around with a flexbox framework. Will go back to bootstrap. -->
-    <link rel="stylesheet" type="text/css" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css"/>
-    <link rel="stylesheet" type="text/css" 
-    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='site.css')}}">
-    <title>Flask App</title>
-</head>
-<body>
-    <div class="columns is-desktop">
-        <div class="column is-half is-offset-one-quarter">
-            {% if name %}
-              <h1 class="hello">Hello {{ name }}! This is a Flask app!</h1>
-            {% else %}
-              <h1 class="hello">Hello, World! It's a Flask app!</h1>
-            {% endif %}
-        </div>
-    </div>
-</body>
-</html>
+{% extends 'layout.html' %}
+
+{% block content %}
+
+{% if name %}
+  <h1>Hello {{ name }}! This is a Flask app!</h1>
+{% else %}
+  <h1>Hello, World! It's a Flask app!</h1>
+{% endif %}
+
+{% endblock %}
