@@ -44,6 +44,8 @@ When finished reading the source code or watching the subsequent video (TBD), de
 
 ## Documentation
 
+### Installation
+
 To prepare the project, make sure you are using a virtual environment for Python and are using Python 3.6.1. This project has not been tested with Python 2.7.
 
 Edit the `settings.py` file and add in a 50-character random key and save it to the SECRET_KEY variable or `export SECRET_KEY="something_super_secret"` in bash or `set "SECRET_KEY=something_super_secret"` in Windows command prompt. I usually use this secret key generator for sample secret keys: [http://www.miniwebtool.com/django-secret-key-generator/](http://www.miniwebtool.com/django-secret-key-generator/).
@@ -55,6 +57,8 @@ Afterwards, you will need to migrate the database, which will also create the SQ
 To create a new superuser, run this command: `python manage.py createsuperuser`. You will be prompted to enter in a username and password for the new super user. This super user account will allow you to log into the application and view the tables and access the admin view.
 
 To load dummy data into the sqlite database, run this command: `python manage.py loaddata data.json`. That will give you all of the test data I was using for this project.
+
+### User Guide
 
 To view the project in the browser, run this command: `python manage.py runserver`. This will start the development server and allow you to view the web application at `http://localhost:8000`.
 
