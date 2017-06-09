@@ -84,9 +84,10 @@
     "pk": 1,
     "fields": {
         "created_date": "2017-06-09T03:18:55.229Z",
-        "updated_date": "2017-06-09T03:18:55.229Z",
+        "updated_date": "2017-06-09T15:14:53.330Z",
         "car_wash_price": "5.00",
-        "truck_wash_price": "10.00"
+        "truck_wash_price": "10.00",
+        "additional_charge_cost": "2.00"
     }
 },
 {
@@ -109,14 +110,14 @@
     "pk": 2,
     "fields": {
         "created_date": "2017-06-09T03:15:37.546Z",
-        "updated_date": "2017-06-09T05:56:38.230Z",
+        "updated_date": "2017-06-09T15:19:17.475Z",
         "first_name": "Ben",
         "last_name": "Green",
         "email_address": "bgreen@green.com",
         "vehicle_type": "0",
         "license_plate": "987654",
-        "times_visited": 1,
-        "total_revenue": "5.00"
+        "times_visited": 2,
+        "total_revenue": "7.50"
     }
 },
 {
@@ -124,14 +125,14 @@
     "pk": 3,
     "fields": {
         "created_date": "2017-06-09T03:16:06.998Z",
-        "updated_date": "2017-06-09T05:56:59.266Z",
+        "updated_date": "2017-06-09T15:27:43.617Z",
         "first_name": "Paul",
         "last_name": "Graves",
         "email_address": "pgraves@graves.com",
         "vehicle_type": "1",
         "license_plate": "1QAZ2WS",
-        "times_visited": 1,
-        "total_revenue": "10.00"
+        "times_visited": 8,
+        "total_revenue": "83.00"
     }
 },
 {
@@ -169,14 +170,14 @@
     "pk": 6,
     "fields": {
         "created_date": "2017-06-09T04:36:55.760Z",
-        "updated_date": "2017-06-09T05:56:24.223Z",
+        "updated_date": "2017-06-09T15:19:38.714Z",
         "first_name": "Omar",
         "last_name": "Quimbaya",
         "email_address": "oq@omar.com",
         "vehicle_type": "0",
         "license_plate": "1234THG",
-        "times_visited": 1,
-        "total_revenue": "5.00"
+        "times_visited": 2,
+        "total_revenue": "7.50"
     }
 },
 {
@@ -184,14 +185,14 @@
     "pk": 7,
     "fields": {
         "created_date": "2017-06-09T05:27:21.739Z",
-        "updated_date": "2017-06-09T05:57:15.853Z",
+        "updated_date": "2017-06-09T15:19:28.749Z",
         "first_name": "Illiam",
         "last_name": "Cintron",
         "email_address": "icintron@cintron.com",
         "vehicle_type": "0",
         "license_plate": "1234JFA",
-        "times_visited": 1,
-        "total_revenue": "5.00"
+        "times_visited": 2,
+        "total_revenue": "7.50"
     }
 },
 {
@@ -201,6 +202,7 @@
         "created_date": "2017-06-09T05:56:24.135Z",
         "updated_date": "2017-06-09T05:56:24.135Z",
         "amount": "5.00",
+        "additional_charge": "0.00",
         "customer": 6
     }
 },
@@ -211,6 +213,7 @@
         "created_date": "2017-06-09T05:56:32.634Z",
         "updated_date": "2017-06-09T05:56:32.634Z",
         "amount": "5.00",
+        "additional_charge": "0.00",
         "customer": 1
     }
 },
@@ -221,6 +224,7 @@
         "created_date": "2017-06-09T05:56:38.148Z",
         "updated_date": "2017-06-09T05:56:38.148Z",
         "amount": "5.00",
+        "additional_charge": "0.00",
         "customer": 2
     }
 },
@@ -231,6 +235,7 @@
         "created_date": "2017-06-09T05:56:59.172Z",
         "updated_date": "2017-06-09T05:56:59.172Z",
         "amount": "10.00",
+        "additional_charge": "0.00",
         "customer": 3
     }
 },
@@ -241,7 +246,118 @@
         "created_date": "2017-06-09T05:57:15.764Z",
         "updated_date": "2017-06-09T05:57:15.764Z",
         "amount": "5.00",
+        "additional_charge": "0.00",
         "customer": 7
+    }
+},
+{
+    "model": "car_wash_manager.transaction",
+    "pk": 10,
+    "fields": {
+        "created_date": "2017-06-09T15:08:43.526Z",
+        "updated_date": "2017-06-09T15:08:43.526Z",
+        "amount": "5.00",
+        "additional_charge": "0.00",
+        "customer": 3
+    }
+},
+{
+    "model": "car_wash_manager.transaction",
+    "pk": 11,
+    "fields": {
+        "created_date": "2017-06-09T15:08:58.423Z",
+        "updated_date": "2017-06-09T15:08:58.423Z",
+        "amount": "10.00",
+        "additional_charge": "0.00",
+        "customer": 3
+    }
+},
+{
+    "model": "car_wash_manager.transaction",
+    "pk": 12,
+    "fields": {
+        "created_date": "2017-06-09T15:13:21.775Z",
+        "updated_date": "2017-06-09T15:13:21.775Z",
+        "amount": "10.00",
+        "additional_charge": "0.00",
+        "customer": 3
+    }
+},
+{
+    "model": "car_wash_manager.transaction",
+    "pk": 13,
+    "fields": {
+        "created_date": "2017-06-09T15:16:14.688Z",
+        "updated_date": "2017-06-09T15:16:14.688Z",
+        "amount": "12.00",
+        "additional_charge": "2.00",
+        "customer": 3
+    }
+},
+{
+    "model": "car_wash_manager.transaction",
+    "pk": 14,
+    "fields": {
+        "created_date": "2017-06-09T15:18:58.066Z",
+        "updated_date": "2017-06-09T15:18:58.066Z",
+        "amount": "12.00",
+        "additional_charge": "2.00",
+        "customer": 3
+    }
+},
+{
+    "model": "car_wash_manager.transaction",
+    "pk": 15,
+    "fields": {
+        "created_date": "2017-06-09T15:19:17.468Z",
+        "updated_date": "2017-06-09T15:19:17.468Z",
+        "amount": "2.50",
+        "additional_charge": "0.00",
+        "customer": 2
+    }
+},
+{
+    "model": "car_wash_manager.transaction",
+    "pk": 16,
+    "fields": {
+        "created_date": "2017-06-09T15:19:28.742Z",
+        "updated_date": "2017-06-09T15:19:28.742Z",
+        "amount": "2.50",
+        "additional_charge": "0.00",
+        "customer": 7
+    }
+},
+{
+    "model": "car_wash_manager.transaction",
+    "pk": 17,
+    "fields": {
+        "created_date": "2017-06-09T15:19:38.713Z",
+        "updated_date": "2017-06-09T15:19:38.713Z",
+        "amount": "2.50",
+        "additional_charge": "0.00",
+        "customer": 6
+    }
+},
+{
+    "model": "car_wash_manager.transaction",
+    "pk": 18,
+    "fields": {
+        "created_date": "2017-06-09T15:27:06.420Z",
+        "updated_date": "2017-06-09T15:27:06.420Z",
+        "amount": "12.00",
+        "additional_charge": "2.00",
+        "customer": 3
+    }
+},
+{
+    "model": "car_wash_manager.transaction",
+    "pk": 19,
+    "fields": {
+        "created_date": "2017-06-09T15:27:43.610Z",
+        "updated_date": "2017-06-09T15:27:43.611Z",
+        "amount": "12.00",
+        "additional_charge": "2.00",
+        "customer": 3
     }
 },
 {
@@ -492,7 +608,7 @@
     "pk": 1,
     "fields": {
         "password": "pbkdf2_sha256$36000$TH340wt8f5Ch$HlI9o3bxiXSjHGifqHMSZso6kk8cxgjGaid5zBxHThg=",
-        "last_login": "2017-06-09T02:02:54.078Z",
+        "last_login": "2017-06-09T14:12:24.434Z",
         "is_superuser": true,
         "username": "omar",
         "first_name": "Omar",
@@ -737,6 +853,19 @@
         "object_repr": "Omar Quimbaya",
         "action_flag": 2,
         "change_message": "[{\"changed\": {\"fields\": [\"times_visited\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+        "action_time": "2017-06-09T15:14:53.337Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "1",
+        "object_repr": "Prices",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"additional_charge_cost\"]}}]"
     }
 }
 ]
