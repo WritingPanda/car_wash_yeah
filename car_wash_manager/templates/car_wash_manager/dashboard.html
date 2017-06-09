@@ -9,6 +9,18 @@ Car Wash Dashboard
     <h3>Dashboard</h3>
 
     <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Total Revenue</h3>
+                </div>
+                <div class="panel-body">
+                    <h2 class="text-center">${{ total_revenue }}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
         {#    Customer Table    #}
         <div class="col-md-7 col-sm-6">
             <div class="panel panel-default">
@@ -56,12 +68,14 @@ Car Wash Dashboard
                             <th>ID</th>
                             <th>Amount</th>
                             <th>Customer Name</th>
+                            <th>Additonal Charge</th>
                         </tr>
                         {% for transaction in transaction_list %}
                         <tr>
                             <td>{{ transaction.id }}</td>
-                            <td>{{ transaction.amount }}</td>
+                            <td>${{ transaction.amount }}</td>
                             <td>{{ transaction.customer.first_name }} {{ transaction.customer.last_name }}</td>
+                            <td>${{ transaction.additional_charge }}</td>
                         </tr>
                         {% endfor %}
                     </table>

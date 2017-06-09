@@ -19,12 +19,20 @@ class Service(BaseModel):
     car_wash_price = models.DecimalField(
         max_digits=4,
         decimal_places=2,
+        default=5.00,
         help_text="Price for washing a regular car."
     )
     truck_wash_price = models.DecimalField(
         max_digits=4,
         decimal_places=2,
+        default=10.00,
         help_text="Price for washing a regular truck."
+    )
+    additional_charge_cost = models.DecimalField(
+        max_digits=4,
+        decimal_places=2,
+        default=0.00,
+        help_text="Additional cost to customer for washing a muddy truck."
     )
 
     def __str__(self):
@@ -86,10 +94,16 @@ class Transaction(BaseModel):
         decimal_places=2,
         help_text="The amount of money paid by the customer."
     )
+    additional_charge = models.DecimalField(
+        help_text="Additional cost to customer for muddy truck.",
+        default=2.00,
+        decimal_places=2,
+        max_digits=5
+    )
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.customer.first_name + " " + str(self.id)
 
     class Meta:
-        ordering = ('customer',)
+        ordering = ('-id',)

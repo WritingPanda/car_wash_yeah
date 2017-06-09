@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.db.models import Sum
 from django.shortcuts import get_object_or_404, render, redirect
 from .forms import CustomerForm, TransactionForm
 from .models import Customer, Transaction, Service
@@ -22,9 +23,12 @@ def dashboard(request):
     customer_list = Customer.objects.all()
     transaction_list = Transaction.objects.all()
 
+    total_revenue = Transaction.objects.aggregate(Sum('amount'))
+
     context = {
         "customer_list": customer_list,
-        "transaction_list": transaction_list
+        "transaction_list": transaction_list,
+        "total_revenue": total_revenue['amount__sum']
     }
     return render(request, template_name="car_wash_manager/dashboard.html", context=context)
 
@@ -95,22 +99,31 @@ def new_transaction(request):
                 messages.error(request, "Invalid vehicle.")
                 return redirect('dashboard')
 
-            if is_muddy:
-                messages.error(request, "The truck is too muddy to be washed at our car wash.")
-                return redirect('dashboard')
-
             if is_bed_let_down:
                 messages.error(request, "The truck's bed is let down. We cannot wash it.")
                 return redirect('dashboard')
 
             customer_instance.times_visited += 1
 
+            # Will discount the base price of the car wash
+            # If truck is muddy, we will add the two dollars after the discount
             if customer_instance.times_visited == 2:
                 amount = amount / 2
 
+            # We do not care if the customer has a car that is muddy. However, if the truck bed is muddy,
+            # we will increase the price by two dollars. Otherwise, we move along.
+            if is_muddy and customer_instance.vehicle_type == "1":
+                # Get the price for the extra charge
+                extra_charge = prices.additional_charge_cost
+                amount = amount + extra_charge
+            else:
+                # If there is no need for an extra charge on the vehicle, set it to 0.00
+                extra_charge = 0.00
+
             customer_instance.total_revenue = customer_instance.total_revenue + amount
 
-            transaction_instance = Transaction(amount=amount, customer=customer)
+            # Get the model ready for saving
+            transaction_instance = Transaction(amount=amount, customer=customer, additional_charge=extra_charge)
 
             transaction_instance.save()
             customer_instance.save()

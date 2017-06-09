@@ -44,10 +44,24 @@ When finished reading the source code or watching the subsequent video (TBD), de
 
 ## Documentation
 
-Oh, it's coming. Just give me a little bit while I write this code here.
+To prepare the project, make sure you are using a virtual environment for Python and are using Python 3.6.1. This project has not been tested with Python 2.7.
 
-To load dummy data into the sqlite database, make sure to migrate the database first. Then run this command:
+Once your virtual environment is active, run this command to install the additional python packages: `pip install -r requirements.txt`. Make sure you are in the project root before running the command.
 
-`python manage.py loaddata data.json`
+Afterwards, you will need to migrate the database, which will also create the SQLite3 database. Run this command: `python manage.py migrate`. 
 
-That will give you all of the test data I was using for this project.
+To create a new superuser, run this command: `python manage.py createsuperuser`. You will be prompted to enter in a username and password for the new super user. This super user account will allow you to log into the application and view the tables and access the admin view.
+
+To load dummy data into the sqlite database, run this command: `python manage.py loaddata data.json`. That will give you all of the test data I was using for this project.
+
+To view the project in the browser, run this command: `python manage.py runserver`. This will start the development server and allow you to view the web application at `http://localhost:8000`.
+
+To access the admin view, navigate to `http://localhost:8000/admin/`. From there, you will be able to control the data in the application. You can use the forms in the New Customer or New Transaction views to create new records in the database, but you can also go into the Admin view and create, edit, and delete the records. There is some business logic associated with the views in the New Customer and New Transaction that will not work in the Admin view, but as a super user, you will be able to perform any action against the database as an administrator. 
+
+Customers will need to be created before transactions can be done. This way, transactions can be associated with specific customers, allowing the application to keep track of the amount a particular customer has spent on car washes and how many times they have visited the location.
+
+If the customer has a vehicle that is stolen, the application will not accept the transaction and notify the user that the vehicle is stolen.
+
+If the customer has a truck that is too muddy, the application will increase the price by $2. 
+
+If the customer's truck bed is down, the application will not accept the transaction and notify the user that the vehicle is unacceptable at the car wash.

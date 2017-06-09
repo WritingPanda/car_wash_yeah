@@ -21,14 +21,16 @@
                         <div class="checkbox form-group">
                             <label>
                                 {{ form.is_muddy }}
-                                Mud in truck?
+                                Covered in mud?
                             </label>
+                            <p class="help-block">If vehicle is a truck, this will add $2 to the price of the car wash.</p>
                         </div>
                         <div class="checkbox form-group">
                             <label>
                                 {{ form.is_bed_let_down }}
                                 Is the truck bed let down?
                             </label>
+                            <p class="help-block">If checked, we will not accept the vehicle.</p>
                         </div>
                         <input type="submit" value="Create" class="btn btn-default">
                     </form>
