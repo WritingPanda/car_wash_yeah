@@ -1,0 +1,42 @@
+{% extends 'car_wash_manager/base.html' %}
+
+{% block title %}
+    New Transaction
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-6 col-md-offset-2 col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">New Transaction Form</h3>
+                </div>
+                <div class="panel-body">
+                    <form action="{% url 'new_transaction' %}" method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            {{ form.customer.label }}
+                            {{ form.customer }}
+                        </div>
+                        <div class="checkbox form-group">
+                            <label>
+                                {{ form.is_muddy }}
+                                Mud in truck?
+                            </label>
+                        </div>
+                        <div class="checkbox form-group">
+                            <label>
+                                {{ form.is_bed_let_down }}
+                                Is the truck bed let down?
+                            </label>
+                        </div>
+                        <input type="submit" value="Create" class="btn btn-default">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <p>If the customer has been a second time, we offer a 50% discount! It is automatically applied at checkout!</p>
+        </div>
+    </div>
+{% endblock %}

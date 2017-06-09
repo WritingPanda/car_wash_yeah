@@ -27,6 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Login redirect URL
+LOGIN_REDIRECT_URL = '/dashboard/'
+
 
 # Application definition
 

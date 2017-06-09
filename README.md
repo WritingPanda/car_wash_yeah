@@ -45,3 +45,9 @@ When finished reading the source code or watching the subsequent video (TBD), de
 ## Documentation
 
 Oh, it's coming. Just give me a little bit while I write this code here.
+
+To load dummy data into the sqlite database, make sure to migrate the database first. Then run this command:
+
+`python manage.py loaddata data.json`
+
+That will give you all of the test data I was using for this project.

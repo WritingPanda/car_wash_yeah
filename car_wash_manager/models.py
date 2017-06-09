@@ -16,16 +16,19 @@ class Service(BaseModel):
     """
     Describes the type of service and the cost of the service
     """
-    car_price = models.DecimalField(
+    car_wash_price = models.DecimalField(
         max_digits=4,
         decimal_places=2,
         help_text="Price for washing a regular car."
     )
-    truck_price = models.DecimalField(
+    truck_wash_price = models.DecimalField(
         max_digits=4,
         decimal_places=2,
         help_text="Price for washing a regular truck."
     )
+
+    def __str__(self):
+        return "Prices"
 
 
 class Customer(BaseModel):
@@ -58,20 +61,35 @@ class Customer(BaseModel):
         max_length=10,
         help_text="License plate of vehicle."
     )
-    total_revenue = models.DecimalField(
-        max_digits=8,
-        decimal_places=2,
-        help_text="The amount of revenue from a single customer."
-    )
     times_visited = models.IntegerField(
-        help_text="Amount of times customer has been to car wash."
+        help_text="Amount of times customer has been to car wash.",
+        default=0
+    )
+    total_revenue = models.DecimalField(
+        help_text="Total amount of money made from customer.",
+        default=0,
+        decimal_places=2,
+        max_digits=5
     )
 
     def __str__(self):
-        return "Name: {first} {last}\nVehicle: {car}\nVisits: {num}\nRevenue: {total}".format(
-            first=self.first_name,
-            last=self.last_name,
-            car=self.vehicle_type,
-            num=self.times_visited,
-            total=self.total_revenue
-        )
+        return "{} {}".format(self.first_name, self.last_name)
+
+
+class Transaction(BaseModel):
+    """
+    Describes a transaction which is associated with a customer.
+    A customer can have multiple transactions.
+    """
+    amount = models.DecimalField(
+        max_digits=8,
+        decimal_places=2,
+        help_text="The amount of money paid by the customer."
+    )
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.customer.first_name + " " + str(self.id)
+
+    class Meta:
+        ordering = ('customer',)
