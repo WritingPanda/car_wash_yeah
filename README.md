@@ -67,3 +67,7 @@ If the customer has a vehicle that is stolen, the application will not accept th
 If the customer has a truck that is too muddy, the application will increase the price by $2. 
 
 If the customer's truck bed is down, the application will not accept the transaction and notify the user that the vehicle is unacceptable at the car wash.
+
+## Testing
+
+There is a _severe_ lack of testing in this application, which is something I do want to cover in the future. Testing for Django is pretty robust, so I am looking forward to diving into it and writing tests against the application.
