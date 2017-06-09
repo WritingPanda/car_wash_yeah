@@ -46,6 +46,8 @@ When finished reading the source code or watching the subsequent video (TBD), de
 
 To prepare the project, make sure you are using a virtual environment for Python and are using Python 3.6.1. This project has not been tested with Python 2.7.
 
+Edit the `settings.py` file and add in a 50-character random key and save it to the SECRET_KEY variable or `export SECRET_KEY="something_super_secret"` in bash or `set "SECRET_KEY=something_super_secret"` in Windows command prompt. I usually use this secret key generator for sample secret keys: [http://www.miniwebtool.com/django-secret-key-generator/](http://www.miniwebtool.com/django-secret-key-generator/).
+
 Once your virtual environment is active, run this command to install the additional python packages: `pip install -r requirements.txt`. Make sure you are in the project root before running the command.
 
 Afterwards, you will need to migrate the database, which will also create the SQLite3 database. Run this command: `python manage.py migrate`. 
