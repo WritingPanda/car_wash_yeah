@@ -1,4 +1,4 @@
-Django==1.11.2
+Django==3.2.14
 passlib==1.7.1
 python-dateutil==2.6.0
 python-editor==1.0.3
